@@ -35,6 +35,12 @@ def parse_args():
         help="The value to threshold the image on. Must be in (0, 255).",
         type=int,
     )
+    parser.add_argument(
+        "-p",
+        action="store_true",
+        dest="print_points",
+        help="If set, the (x, y) locations of the lights will be printed.",
+    )
     args = parser.parse_args()
 
     try:
@@ -61,7 +67,13 @@ def main():
             blur_length=args.blur_length,
             threshold=args.threshold,
         )
-        light_detector.show_lights()
+        if args.print_points:
+            print("Centers:")
+            for count, center in enumerate(light_detector.light_centers):
+                print(f"{count}: {center}")
+        else:
+            light_detector.show_lights()
+
     except FileNotFoundError as error:
         print(error)
 

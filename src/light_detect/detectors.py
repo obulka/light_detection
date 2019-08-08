@@ -1,9 +1,13 @@
 """Contains object detection classes."""
+# pylint: disable=no-member,not-an-iterable
 # 3rd Party Imports
 import cv2
 import numpy as np
 import skimage.measure
 
+# Local Imports
+from .objects import Circle
+from .utils import autoset_property
 
 class ObjectDetector:
     """Base class for object detectors."""
@@ -80,6 +84,28 @@ class ObjectDetector:
             (blur_length,) * 2,
             0.,
         )
+
+    @staticmethod
+    def _get_contour_circles(contours):
+        """Find the minimum enclosing circle of each contour.
+
+        Args:
+            contours (list(np.array((:, 1, 2), int))):
+                Contains the contours.
+
+        Returns:
+            list((int, int), int):
+                Each row contains the corresponding contour's center
+                and radius in the order x, y, radius
+        """
+        circles = []
+
+        for contour in contours:
+            # draw the light on the image
+            center, radius = cv2.minEnclosingCircle(contour)
+            circles.append(Circle.as_integers(center, radius))
+
+        return circles
 
     def _get_contours(self, sort=False):
         """Find the contours in the mask, sorted from left to right.
@@ -172,7 +198,9 @@ class LightDetector(ObjectDetector):
 
         self._blur_length = blur_length
         self._threshold = threshold
+
         self._light_contours = []
+        self._light_circles = []
 
         self._working_img = self.gray_scale_img
 
@@ -220,15 +248,20 @@ class LightDetector(ObjectDetector):
         """
         self._working_img = self.gray_scale_img
         self._preprocess_img()
-        self._reset_lights()
+        self._reset_light_detections()
 
-    def _reset_lights(self):
+    def _reset_light_detections(self):
         """Reset the `lights` parameter to be empty."""
         self._light_contours = []
+        self._light_circles = []
 
-    def _set_lights(self):
-        """Find the lights in the image."""
+    def _set_light_contours(self):
+        """Find the contours of the lights in the image."""
         self._light_contours = self._get_contours()
+
+    def _set_light_circles(self):
+        """Find enclosing circles aropund the lights in the image."""
+        self._light_circles = self._get_contour_circles(self.light_contours)
 
     @property
     def gaussian_blur_length(self):
@@ -245,12 +278,20 @@ class LightDetector(ObjectDetector):
         self._blur_length = new_length
         self._reprocess_image()
 
-    @property
+    @autoset_property
     def light_contours(self):
         """list(np.array((:, 1, 2), int)): Contains contours of lights."""
-        if not self._light_contours:
-            self._set_lights()
         return self._light_contours
+
+    @autoset_property
+    def light_circles(self):
+        """list(Circle): Contains circles that enclose the lights."""
+        return self._light_circles
+
+    @property
+    def light_centers(self):
+        """list(tuple(int, int)): Contains the center of each light."""
+        return [circle.center for circle in self.light_circles]
 
     @property
     def threshold(self):
@@ -279,14 +320,11 @@ class LightDetector(ObjectDetector):
         """
         display_image = self._original_img.copy()
 
-        for contour in self.light_contours:
-            # draw the light on the image
-            center, radius = cv2.minEnclosingCircle(contour)
-
+        for circle in self.light_circles:
             cv2.circle(
                 display_image,
-                (int(center[0]), int(center[1])),
-                int(radius),
+                circle.center,
+                circle.radius,
                 colour,
                 thickness,
             )
