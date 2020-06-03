@@ -1,4 +1,4 @@
-# pylight
+# light_detection
 
 Command line tool and API that allows detection of lights in an image.
 
