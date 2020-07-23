@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to light_detect’s documentation! &#8212; light_detect 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-light-detect-s-documentation">
+<h1>Welcome to light_detect’s documentation!<a class="headerlink" href="#welcome-to-light-detect-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="module-run">
+<span id="light-detection-main"></span><h1>Light Detection main<a class="headerlink" href="#module-run" title="Permalink to this headline">¶</a></h1>
+<p>Command line tool to find lights in an image</p>
+<dl class="py function">
+<dt id="run.main">
+<code class="sig-prename descclassname">run.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/run.html#main"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run.main" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect the lights in an image.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="run.parse_args">
+<code class="sig-prename descclassname">run.</code><code class="sig-name descname">parse_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/run.html#parse_args"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#run.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the arguments.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>argparse.Namespace: The command line arguments.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-light_detect.detectors">
+<span id="light-detection-detectors"></span><h1>Light Detection detectors<a class="headerlink" href="#module-light_detect.detectors" title="Permalink to this headline">¶</a></h1>
+<p>Contains object detection classes.</p>
+<dl class="py class">
+<dt id="light_detect.detectors.LightDetector">
+<em class="property">class </em><code class="sig-prename descclassname">light_detect.detectors.</code><code class="sig-name descname">LightDetector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">blur_length</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">210</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/detectors.html#LightDetector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.detectors.LightDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object capable of finding light sources in an image.</p>
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.gaussian_blur_length">
+<em class="property">property </em><code class="sig-name descname">gaussian_blur_length</code><a class="headerlink" href="#light_detect.detectors.LightDetector.gaussian_blur_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>int: The edge length of the gaussion blur kernel.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.light_centers">
+<em class="property">property </em><code class="sig-name descname">light_centers</code><a class="headerlink" href="#light_detect.detectors.LightDetector.light_centers" title="Permalink to this definition">¶</a></dt>
+<dd><p>list(tuple(int, int)): Contains the center of each light.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.light_circles">
+<em class="property">property </em><code class="sig-name descname">light_circles</code><a class="headerlink" href="#light_detect.detectors.LightDetector.light_circles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorate the property method with the ability to
+automatically set the corresponding instance variable of the
+class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.light_contours">
+<em class="property">property </em><code class="sig-name descname">light_contours</code><a class="headerlink" href="#light_detect.detectors.LightDetector.light_contours" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorate the property method with the ability to
+automatically set the corresponding instance variable of the
+class.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.show_lights">
+<code class="sig-name descname">show_lights</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">colour</span><span class="o">=</span><span class="default_value">0, 0, 255</span></em>, <em class="sig-param"><span class="n">thickness</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/detectors.html#LightDetector.show_lights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.detectors.LightDetector.show_lights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the lights.</p>
+<dl class="simple">
+<dt>Keyword Args:</dt><dd><dl class="simple">
+<dt>colour (tuple(uint8)):</dt><dd><p>The BGR colour to mark the lights with.</p>
+</dd>
+<dt>thickness (int):</dt><dd><p>The line thickness to use in marking the lights.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.LightDetector.threshold">
+<em class="property">property </em><code class="sig-name descname">threshold</code><a class="headerlink" href="#light_detect.detectors.LightDetector.threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>np.uint8: The value to threshold the image on.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="light_detect.detectors.ObjectDetector">
+<em class="property">class </em><code class="sig-prename descclassname">light_detect.detectors.</code><code class="sig-name descname">ObjectDetector</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image_path</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">image</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/detectors.html#ObjectDetector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.detectors.ObjectDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base class for object detectors.</p>
+<dl class="py method">
+<dt id="light_detect.detectors.ObjectDetector.gray_scale_img">
+<em class="property">property </em><code class="sig-name descname">gray_scale_img</code><a class="headerlink" href="#light_detect.detectors.ObjectDetector.gray_scale_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>np.array((:,:), np.uint8):
+The grayscale version of the original image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.ObjectDetector.show_image">
+<em class="property">static </em><code class="sig-name descname">show_image</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">window_title</span><span class="o">=</span><span class="default_value">'Image'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/detectors.html#ObjectDetector.show_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.detectors.ObjectDetector.show_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display an image.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>image (np.array((:,:,…), np.uint8)): The image to show.</p>
+</dd>
+<dt>Keyword Args:</dt><dd><p>window_title (str): The title to display on the window.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.detectors.ObjectDetector.show_working_image">
+<code class="sig-name descname">show_working_image</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/detectors.html#ObjectDetector.show_working_image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.detectors.ObjectDetector.show_working_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the current working image.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-light_detect.objects">
+<span id="light-detection-objects"></span><h1>Light Detection objects<a class="headerlink" href="#module-light_detect.objects" title="Permalink to this headline">¶</a></h1>
+<p>Useful object representation.</p>
+<dl class="py class">
+<dt id="light_detect.objects.Circle">
+<em class="property">class </em><code class="sig-prename descclassname">light_detect.objects.</code><code class="sig-name descname">Circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/objects.html#Circle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.objects.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represent a circle.</p>
+<dl class="py method">
+<dt id="light_detect.objects.Circle.as_integers">
+<em class="property">classmethod </em><code class="sig-name descname">as_integers</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">radius</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/objects.html#Circle.as_integers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.objects.Circle.as_integers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the circle using rounded, integer values.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>center (tuple(float, float)):</dt><dd><p>The center position of the circle.</p>
+</dd>
+</dl>
+<p>radius (float): The radius of the circle.</p>
+</dd>
+<dt>Returns:</dt><dd><p>instance: The class instance intialized with integers.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.objects.Circle.center">
+<em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#light_detect.objects.Circle.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>tuple: The center position of the circle.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="light_detect.objects.Circle.radius">
+<em class="property">property </em><code class="sig-name descname">radius</code><a class="headerlink" href="#light_detect.objects.Circle.radius" title="Permalink to this definition">¶</a></dt>
+<dd><p>float or int: The radius of the circle.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-light_detect.utils">
+<span id="light-detection-utils"></span><h1>Light Detection utils<a class="headerlink" href="#module-light_detect.utils" title="Permalink to this headline">¶</a></h1>
+<p>Utility Functions.</p>
+<dl class="py function">
+<dt id="light_detect.utils.autoset_property">
+<code class="sig-prename descclassname">light_detect.utils.</code><code class="sig-name descname">autoset_property</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">property_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/light_detect/utils.html#autoset_property"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#light_detect.utils.autoset_property" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wraps a class property to automatically set the corresponding
+instance variable if it evaluates False. This requires the instance
+variable name be an underscore followed by the property method name,
+and a corresponding setter method be implemented and named _set
+followed by the instance variable name. This allows automatic
+caching of potentially slow to set variables.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>property_method (method):</dt><dd><p>The class property that is to be decorated.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">light_detect</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Owen Bulka.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

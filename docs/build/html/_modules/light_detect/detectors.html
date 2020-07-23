@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light_detect.detectors &#8212; light_detect 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for light_detect.detectors</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Contains object detection classes.&quot;&quot;&quot;</span>
+<span class="c1"># pylint: disable=no-member,not-an-iterable</span>
+<span class="c1"># 3rd Party Imports</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">skimage.measure</span>
+
+<span class="c1"># Local Imports</span>
+<span class="kn">from</span> <span class="nn">.objects</span> <span class="kn">import</span> <span class="n">Circle</span>
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">autoset_property</span>
+
+<div class="viewcode-block" id="ObjectDetector"><a class="viewcode-back" href="../../index.html#light_detect.detectors.ObjectDetector">[docs]</a><span class="k">class</span> <span class="nc">ObjectDetector</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Base class for object detectors.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize a light detector object.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            image_path (str):</span>
+<span class="sd">                Path to the image to detect lights in.</span>
+<span class="sd">                Default is None.</span>
+<span class="sd">                Preferred if both arguments are specified.</span>
+
+<span class="sd">            image (np.array(:,:,:), uint8):</span>
+<span class="sd">                The BGR formatted image data to detect lights in.</span>
+<span class="sd">                Default is None.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            FileNotFoundError:</span>
+<span class="sd">                If the file cannot be read and `image` is nto specified.</span>
+<span class="sd">            TypeError: If neither parameter is specified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">image_path</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">image</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;A parameter must be specified.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">image_path</span><span class="p">:</span>
+            <span class="c1"># Load the image as a BGR numpy array.</span>
+            <span class="n">new_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">new_image</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">image</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;File not found, using image that was passed.&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="s2">&quot;The file path is invalid.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">new_image</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">new_image</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_original_img</span> <span class="o">=</span> <span class="n">new_image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">new_image</span>
+
+    <span class="k">def</span> <span class="nf">_erode_dilate_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">erode_iters</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">dilate_iters</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Erode and dilate the working image.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            erode_iters (int):</span>
+<span class="sd">                Number of erosion iterations to perform.</span>
+<span class="sd">                Default is 2.</span>
+
+<span class="sd">            dilate_iters (int):</span>
+<span class="sd">                Number of dilation iterations to perform.</span>
+<span class="sd">                Default is 4.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">erode</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="n">iterations</span><span class="o">=</span><span class="n">erode_iters</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">dilate</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="n">iterations</span><span class="o">=</span><span class="n">dilate_iters</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_gaussian_blur_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blur_length</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Apply a gaussian blur to the working image.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            blur_length (int):</span>
+<span class="sd">                The length to use in Gaussian blurring the image.</span>
+<span class="sd">                Must be odd. Default is 5.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">GaussianBlur</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">blur_length</span><span class="p">,)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="mf">0.</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_get_contour_circles</span><span class="p">(</span><span class="n">contours</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Find the minimum enclosing circle of each contour.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            contours (list(np.array((:, 1, 2), int))):</span>
+<span class="sd">                Contains the contours.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list((int, int), int):</span>
+<span class="sd">                Each row contains the corresponding contour&#39;s center</span>
+<span class="sd">                and radius in the order x, y, radius</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">circles</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+            <span class="c1"># draw the light on the image</span>
+            <span class="n">center</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">minEnclosingCircle</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="n">circles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Circle</span><span class="o">.</span><span class="n">as_integers</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">circles</span>
+
+    <span class="k">def</span> <span class="nf">_get_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Find the contours in the mask, sorted from left to right.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list(np.array((:, 1, 2), int)): Contains the image contours.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">contours</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">contours</span> <span class="o">=</span> <span class="n">contours</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">contours</span> <span class="o">=</span> <span class="n">contours</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Contours must be of size 2 or 3, currently size: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">sort</span><span class="p">:</span>
+            <span class="n">contours</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ctr</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">ctr</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">contours</span>
+
+    <span class="k">def</span> <span class="nf">_preprocess_img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Preprocess the working image for object detection.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_threshold_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">128</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Automatically threshold the working image.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span>
+            <span class="n">threshold</span><span class="p">,</span>
+            <span class="mi">255</span><span class="p">,</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">THRESH_BINARY</span><span class="p">,</span>
+        <span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gray_scale_img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;np.array((:,:), np.uint8):</span>
+<span class="sd">                The grayscale version of the original image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_original_img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ObjectDetector.show_image"><a class="viewcode-back" href="../../index.html#light_detect.detectors.ObjectDetector.show_image">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">show_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">window_title</span><span class="o">=</span><span class="s2">&quot;Image&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Display an image.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image (np.array((:,:,...), np.uint8)): The image to show.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            window_title (str): The title to display on the window.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">window_title</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+        <span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ObjectDetector.show_working_image"><a class="viewcode-back" href="../../index.html#light_detect.detectors.ObjectDetector.show_working_image">[docs]</a>    <span class="k">def</span> <span class="nf">show_working_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Display the current working image.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span> <span class="s2">&quot;Working Image&quot;</span><span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="LightDetector"><a class="viewcode-back" href="../../index.html#light_detect.detectors.LightDetector">[docs]</a><span class="k">class</span> <span class="nc">LightDetector</span><span class="p">(</span><span class="n">ObjectDetector</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Object capable of finding light sources in an image.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">blur_length</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">210</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Initialize a light detector object.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            image_path (str):</span>
+<span class="sd">                Path to the image to detect lights in.</span>
+<span class="sd">                Default is None.</span>
+<span class="sd">                Preferred if both arguments are specified.</span>
+
+<span class="sd">            image (np.array(:,:,:), uint8):</span>
+<span class="sd">                The BGR formatted image data to detect lights in.</span>
+<span class="sd">                Default is None.</span>
+
+<span class="sd">            blur_length (int):</span>
+<span class="sd">                The length to use in Gaussian blurring the image.</span>
+<span class="sd">                Must be odd. Default is 5.</span>
+
+<span class="sd">            threshold (np.uint8):</span>
+<span class="sd">                The value to threshold the image on.</span>
+<span class="sd">                Default is 210.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If neither parameter is specified.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LightDetector</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_blur_length</span> <span class="o">=</span> <span class="n">blur_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="n">threshold</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_contours</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_circles</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gray_scale_img</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess_img</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_mask_lights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_size</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Perform a connected component analysis on the thresholded</span>
+<span class="sd">        image, then initialize a mask to store only the &quot;large&quot;</span>
+<span class="sd">        components.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            min_size (int):</span>
+<span class="sd">                The minimum number of pixels in a light source.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">skimage</span><span class="o">.</span><span class="n">measure</span><span class="o">.</span><span class="n">label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span> <span class="n">neighbors</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">labels</span><span class="p">):</span>
+            <span class="c1"># Ignore the background label</span>
+            <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c1"># Construct the label mask</span>
+            <span class="n">label_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+            <span class="n">label_mask</span><span class="p">[</span><span class="n">labels</span> <span class="o">==</span> <span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="mi">255</span>
+
+            <span class="c1"># Count the number of pixels in the component</span>
+            <span class="n">num_pixels</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">countNonZero</span><span class="p">(</span><span class="n">label_mask</span><span class="p">)</span>
+
+            <span class="c1"># If the number of pixels is large enough,</span>
+            <span class="c1"># add it to the final mask of blobs</span>
+            <span class="k">if</span> <span class="n">num_pixels</span> <span class="o">&gt;</span> <span class="n">min_size</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span><span class="p">,</span> <span class="n">label_mask</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_preprocess_img</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Preprocess a greyscale image for object detection.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_gaussian_blur_img</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_blur_length</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold_img</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erode_dilate_img</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_mask_lights</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_reprocess_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reprocess the original image and reset the `lights`</span>
+<span class="sd">        parameter.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_working_img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gray_scale_img</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess_img</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reset_light_detections</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_reset_light_detections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Reset the `lights` parameter to be empty.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_contours</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_circles</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">_set_light_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Find the contours of the lights in the image.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_contours</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_contours</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_set_light_circles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Find enclosing circles aropund the lights in the image.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_light_circles</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_contour_circles</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">light_contours</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gaussian_blur_length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;int: The edge length of the gaussion blur kernel.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_blur_length</span>
+
+    <span class="nd">@gaussian_blur_length</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">gaussian_blur_length</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_length</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set the length of the gaussion blur kernel.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_length (int): The new kernel edge length</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_blur_length</span> <span class="o">=</span> <span class="n">new_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reprocess_image</span><span class="p">()</span>
+
+    <span class="nd">@autoset_property</span>
+    <span class="k">def</span> <span class="nf">light_contours</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list(np.array((:, 1, 2), int)): Contains contours of lights.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_light_contours</span>
+
+    <span class="nd">@autoset_property</span>
+    <span class="k">def</span> <span class="nf">light_circles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list(Circle): Contains circles that enclose the lights.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_light_circles</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">light_centers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;list(tuple(int, int)): Contains the center of each light.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">circle</span><span class="o">.</span><span class="n">center</span> <span class="k">for</span> <span class="n">circle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">light_circles</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">threshold</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;np.uint8: The value to threshold the image on.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span>
+
+    <span class="nd">@threshold</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">threshold</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_threshold</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Change the value the image should be thresholded on.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            new_threshold (np.uint8): The new value to threshold on.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_threshold</span> <span class="o">=</span> <span class="n">new_threshold</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_reprocess_image</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LightDetector.show_lights"><a class="viewcode-back" href="../../index.html#light_detect.detectors.LightDetector.show_lights">[docs]</a>    <span class="k">def</span> <span class="nf">show_lights</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Display the lights.</span>
+
+<span class="sd">        Keyword Args:</span>
+<span class="sd">            colour (tuple(uint8)):</span>
+<span class="sd">                The BGR colour to mark the lights with.</span>
+
+<span class="sd">            thickness (int):</span>
+<span class="sd">                The line thickness to use in marking the lights.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">display_image</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_original_img</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">circle</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">light_circles</span><span class="p">:</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span>
+                <span class="n">display_image</span><span class="p">,</span>
+                <span class="n">circle</span><span class="o">.</span><span class="n">center</span><span class="p">,</span>
+                <span class="n">circle</span><span class="o">.</span><span class="n">radius</span><span class="p">,</span>
+                <span class="n">colour</span><span class="p">,</span>
+                <span class="n">thickness</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="c1"># show the output image</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">show_image</span><span class="p">(</span><span class="n">display_image</span><span class="p">,</span> <span class="s2">&quot;Lights&quot;</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">light_detect</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Owen Bulka.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
