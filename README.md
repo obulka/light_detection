@@ -16,7 +16,7 @@ To enter the virtual environment run:
 
 # Run
 
-The command line executable is at ./src/run.py, use the -h switch to view the available options.
+The command line executable is at `./src/run.py`, use the `-h` or `--help` switch to view the available options.
 
 # Documentation
 
@@ -34,4 +34,4 @@ To build the pdf version of the documentation, traverse to the docs directory an
 
     sphinx-build -b rinoh source build/rinoh
 
-The pdf will be located at docs/build/rinoh/light_detect.pdf
+The pdf will be located at `./docs/build/rinoh/light_detect.pdf`
