@@ -1,10 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Command line tool to find lights in an image"""
 # Standard Imports
 import argparse
 
 # Local Imports
-from light_detect.detectors import LightDetector
+from object_detect.detectors import LightDetector
 
 
 def parse_args():

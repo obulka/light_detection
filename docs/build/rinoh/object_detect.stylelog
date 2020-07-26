@@ -13,10 +13,10 @@
          > (0,0,1,0,2) title page author
            (0,0,0,0,2) body
       SingleStyledText('Owen Bulka')
-    Paragraph('Jul 23, 2020', style='title page date')
+    Paragraph('Jul 25, 2020', style='title page date')
          > (0,0,1,0,2) title page date
            (0,0,0,0,2) body
-      SingleStyledText('Jul 23, 2020')
+      SingleStyledText('Jul 25, 2020')
 ---------------------------------- page i ----------------------------------
 #### FootnoteContainer('footnotes')
   StaticGroupedFlowables()
@@ -87,30 +87,30 @@
 #### ChainedContainer('column1')
   StaticGroupedFlowables()
     DocumentTree()
-      Paragraph('Contents:')   /home/ob1/software/light_detection/docs/source/index.rst:9 <paragraph>
+      Paragraph('Contents:')   /home/ob1/software/object_detection/docs/source/index.rst:9 <paragraph>
            > (0,0,0,0,2) body
         MixedStyledText('Contents:')
           SingleStyledText('Contents:')
-      StaticGroupedFlowables()   /home/ob1/software/light_detection/docs/source/index.rst:0 <compound>
-      Paragraph('Command line tool to find lights...')   /home/ob1/software/light_detection/src/run.py:docstring of run:1 <paragraph>
+      StaticGroupedFlowables()   /home/ob1/software/object_detection/docs/source/index.rst:0 <compound>
+      Paragraph('Command line tool to find lights...')   /home/ob1/software/object_detection/src/detect.py:docstring of detect:1 <paragraph>
            > (0,0,0,0,2) body
         MixedStyledText('Command line tool to find lights...')
           SingleStyledText('Command line tool to find lights...')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('run.main (  ) ', id='run.main')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:1 <desc_signature>
+          Paragraph('detect.main (  ) ', id='detect.main')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('run.main (  ) ')
-              MixedStyledText('run.', style='additional name part')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:None <desc_addname>
+            MixedStyledText('detect.main (  ) ')
+              MixedStyledText('detect.', style='additional name part')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('run.')
-              MixedStyledText('main', style='main object name')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:None <desc_name>
+                SingleStyledText('detect.')
+              MixedStyledText('main', style='main object name')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('main')
-              MixedStyledText(' (  ) ')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:None <desc_parameterlist>
+              MixedStyledText(' (  ) ')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:None <desc_parameterlist>
                 MixedStyledText(' ( ')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -118,28 +118,28 @@
                        > (0,0,3,0,6) object parameter list
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Detect the lights in an image.')   /home/ob1/software/light_detection/src/run.py:docstring of run.main:1 <paragraph>
+          Paragraph('Detect the lights in an image.')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.main:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Detect the lights in an image.')
               SingleStyledText('Detect the lights in an image.')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('run.parse_args (  ) ', id='run.parse_args')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:1 <desc_signature>
+          Paragraph('detect.parse_args (  ) ', id='detect.parse_args')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('run.parse_args (  ) ')
-              MixedStyledText('run.', style='additional name part')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:None <desc_addname>
+            MixedStyledText('detect.parse_args (  ) ')
+              MixedStyledText('detect.', style='additional name part')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('run.')
-              MixedStyledText('parse_args', style='main object name')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:None <desc_name>
+                SingleStyledText('detect.')
+              MixedStyledText('parse_args', style='main object name')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('parse_args')
-              MixedStyledText(' (  ) ')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:None <desc_parameterlist>
+              MixedStyledText(' (  ) ')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:None <desc_parameterlist>
                 MixedStyledText(' ( ')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -147,53 +147,53 @@
                        > (0,0,3,0,6) object parameter list
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Parse the arguments.')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:1 <paragraph>
+          Paragraph('Parse the arguments.')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Parse the arguments.')
               SingleStyledText('Parse the arguments.')
-          DefinitionList()   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:None <definition_list>
+          DefinitionList()   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:None <definition_list>
                > (0,0,0,0,2) definition list
-            LabeledFlowable()   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:3 <definition_list_item>
+            LabeledFlowable()   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:3 <definition_list_item>
                  > (0,0,0,0,4) definition list item
               StaticGroupedFlowables(style='definition term')
                    > (0,0,1,0,5) definition term
                 Paragraph('Returns:')
                      > (0,0,1,0,7) definition term paragraph
                        (0,0,0,0,2) body
-                  MixedStyledText('Returns:')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:3 <term>
+                  MixedStyledText('Returns:')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:3 <term>
                     SingleStyledText('Returns:')
               StaticGroupedFlowables(style='definition')   None:None <definition>
                    > (0,0,1,0,5) definition
-                Paragraph('argparse.Namespace: The command ...')   /home/ob1/software/light_detection/src/run.py:docstring of run.parse_args:4 <paragraph>
+                Paragraph('argparse.Namespace: The command ...')   /home/ob1/software/object_detection/src/detect.py:docstring of detect.parse_args:4 <paragraph>
                      > (0,0,1,0,7) definition paragraph
                        (0,0,0,0,2) body
                   MixedStyledText('argparse.Namespace: The command ...')
                     SingleStyledText('argparse.Namespace: The command ...')
-      Paragraph('Contains object detection classe...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors:1 <paragraph>
+      Paragraph('Contains object detection classe...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors:1 <paragraph>
            > (0,0,0,0,2) body
         MixedStyledText('Contains object detection classe...')
           SingleStyledText('Contains object detection classe...')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('class light_detect.detectors.Lig...', id='light_detect.detectors.LightDetector')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:1 <desc_signature>
+          Paragraph('class object_detect.detectors.Li...', id='object_detect.detectors.LightDetector')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('class light_detect.detectors.Lig...')
-              MixedStyledText('class ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_annotation>
+            MixedStyledText('class object_detect.detectors.Li...')
+              MixedStyledText('class ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_annotation>
                    > (0,0,3,0,6) object annotation
                 SingleStyledText('class ')
-              MixedStyledText('light_detect.detectors.', style='additional name part')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_addname>
+              MixedStyledText('object_detect.detectors.', style='additional name part')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('light_detect.detectors.')
-              MixedStyledText('LightDetector', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_name>
+                SingleStyledText('object_detect.detectors.')
+              MixedStyledText('LightDetector', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('LightDetector')
-              MixedStyledText(' ( image_path=None, image=None, ...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_parameterlist>
+              MixedStyledText(' ( image_path=None, image=None, ...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_parameterlist>
                 MixedStyledText(' ( image_path=None, image=None, ...')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -236,93 +236,93 @@
                         SingleStyledText('210')
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Object capable of finding light ...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:1 <paragraph>
+          Paragraph('Object capable of finding light ...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Object capable of finding light ...')
               SingleStyledText('Object capable of finding light ...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property gaussian_blur_length', id='light_detect.detectors.LightDetector.gaussian_blur_length')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:1 <desc_signature>
+              Paragraph('property gaussian_blur_length', id='object_detect.detectors.LightDetector.gaussian_blur_length')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property gaussian_blur_length')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('gaussian_blur_length', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:None <desc_name>
+                  MixedStyledText('gaussian_blur_length', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('gaussian_blur_length')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('int: The edge length of the gaus...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.gaussian_blur_length:1 <paragraph>
+              Paragraph('int: The edge length of the gaus...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.gaussian_blur_length:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('int: The edge length of the gaus...')
                   SingleStyledText('int: The edge length of the gaus...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property light_centers', id='light_detect.detectors.LightDetector.light_centers')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:1 <desc_signature>
+              Paragraph('property light_centers', id='object_detect.detectors.LightDetector.light_centers')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property light_centers')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('light_centers', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:None <desc_name>
+                  MixedStyledText('light_centers', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('light_centers')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('list(tuple(int, int)): Contains ...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_centers:1 <paragraph>
+              Paragraph('list(tuple(int, int)): Contains ...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_centers:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('list(tuple(int, int)): Contains ...')
                   SingleStyledText('list(tuple(int, int)): Contains ...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property light_circles', id='light_detect.detectors.LightDetector.light_circles')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:1 <desc_signature>
+              Paragraph('property light_circles', id='object_detect.detectors.LightDetector.light_circles')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property light_circles')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('light_circles', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:None <desc_name>
+                  MixedStyledText('light_circles', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('light_circles')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Decorate the property method wit...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_circles:1 <paragraph>
+              Paragraph('Decorate the property method wit...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_circles:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Decorate the property method wit...')
                   SingleStyledText('Decorate the property method wit...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property light_contours', id='light_detect.detectors.LightDetector.light_contours')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:1 <desc_signature>
+              Paragraph('property light_contours', id='object_detect.detectors.LightDetector.light_contours')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property light_contours')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('light_contours', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:None <desc_name>
+                  MixedStyledText('light_contours', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('light_contours')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Decorate the property method wit...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.light_contours:1 <paragraph>
+              Paragraph('Decorate the property method wit...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.light_contours:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Decorate the property method wit...')
@@ -331,14 +331,14 @@
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('show_lights ( colour=0, 0, 255, ...', id='light_detect.detectors.LightDetector.show_lights')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:1 <desc_signature>
+              Paragraph('show_lights ( colour=0, 0, 255, ...', id='object_detect.detectors.LightDetector.show_lights')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('show_lights ( colour=0, 0, 255, ...')
-                  MixedStyledText('show_lights', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:None <desc_name>
+                  MixedStyledText('show_lights', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('show_lights')
-                  MixedStyledText(' ( colour=0, 0, 255, thickness=3...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:None <desc_parameterlist>
+                  MixedStyledText(' ( colour=0, 0, 255, thickness=3...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:None <desc_parameterlist>
                     MixedStyledText(' ( colour=0, 0, 255, thickness=3')
                       SingleStyledText(' ( ', style='parentheses')
                            > (0,0,3,0,6) object parentheses
@@ -363,56 +363,56 @@
                             SingleStyledText('3')
                     SingleStyledText(' ) ', style='parentheses')
                          > (0,0,3,0,6) object parentheses
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Display the lights.')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:1 <paragraph>
+              Paragraph('Display the lights.')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Display the lights.')
                   SingleStyledText('Display the lights.')
               DefinitionList()   None:None <definition_list>
                    > (0,0,0,0,2) definition list
-                LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:7 <definition_list_item>
+                LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:7 <definition_list_item>
                      > (0,0,0,0,4) definition list item
                   StaticGroupedFlowables(style='definition term')
                        > (0,0,1,0,5) definition term
                     Paragraph('Keyword Args:')
                          > (0,0,1,0,7) definition term paragraph
                            (0,0,0,0,2) body
-                      MixedStyledText('Keyword Args:')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:7 <term>
+                      MixedStyledText('Keyword Args:')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:7 <term>
                         SingleStyledText('Keyword Args:')
                   StaticGroupedFlowables(style='definition')   None:None <definition>
                        > (0,0,1,0,5) definition
                     DefinitionList()   None:None <definition_list>
                          > (0,0,0,0,2) definition list
-                      LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:5 <definition_list_item>
+                      LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:5 <definition_list_item>
                            > (0,0,0,0,4) definition list item
                         StaticGroupedFlowables(style='definition term')
                              > (0,0,1,0,5) definition term
                           Paragraph('colour (tuple(uint8)):')
                                > (0,0,1,0,7) definition term paragraph
                                  (0,0,0,0,2) body
-                            MixedStyledText('colour (tuple(uint8)):')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:5 <term>
+                            MixedStyledText('colour (tuple(uint8)):')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:5 <term>
                               SingleStyledText('colour (tuple(uint8)):')
                         StaticGroupedFlowables(style='definition')   None:None <definition>
                              > (0,0,1,0,5) definition
-                          Paragraph('The BGR colour to mark the light...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:5 <paragraph>
+                          Paragraph('The BGR colour to mark the light...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:5 <paragraph>
                                > (0,0,1,0,7) definition paragraph
                                  (0,0,0,0,2) body
                             MixedStyledText('The BGR colour to mark the light...')
                               SingleStyledText('The BGR colour to mark the light...')
-                      LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:7 <definition_list_item>
+                      LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:7 <definition_list_item>
                            > (0,0,0,0,4) definition list item
                         StaticGroupedFlowables(style='definition term')
                              > (0,0,1,0,5) definition term
                           Paragraph('thickness (int):')
                                > (0,0,1,0,7) definition term paragraph
                                  (0,0,0,0,2) body
-                            MixedStyledText('thickness (int):')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:7 <term>
+                            MixedStyledText('thickness (int):')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:7 <term>
                               SingleStyledText('thickness (int):')
                         StaticGroupedFlowables(style='definition')   None:None <definition>
                              > (0,0,1,0,5) definition
-                          Paragraph('The line thickness to use in mar...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.show_lights:8 <paragraph>
+                          Paragraph('The line thickness to use in mar...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.show_lights:8 <paragraph>
                                > (0,0,1,0,7) definition paragraph
                                  (0,0,0,0,2) body
                             MixedStyledText('The line thickness to use in mar...')
@@ -435,49 +435,49 @@
 #### ChainedContainer('column1')
   (continued) StaticGroupedFlowables()
     (continued) DocumentTree()
-      (continued) LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      (continued) LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
-        (continued) StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector:None <desc_content>
+        (continued) StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector:None <desc_content>
              > (0,0,2,0,3) object description content
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property threshold', id='light_detect.detectors.LightDetector.threshold')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:1 <desc_signature>
+              Paragraph('property threshold', id='object_detect.detectors.LightDetector.threshold')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property threshold')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('threshold', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:None <desc_name>
+                  MixedStyledText('threshold', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('threshold')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('np.uint8: The value to threshold...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.LightDetector.threshold:1 <paragraph>
+              Paragraph('np.uint8: The value to threshold...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.LightDetector.threshold:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('np.uint8: The value to threshold...')
                   SingleStyledText('np.uint8: The value to threshold...')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('class light_detect.detectors.Obj...', id='light_detect.detectors.ObjectDetector')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:1 <desc_signature>
+          Paragraph('class object_detect.detectors.Ob...', id='object_detect.detectors.ObjectDetector')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('class light_detect.detectors.Obj...')
-              MixedStyledText('class ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:None <desc_annotation>
+            MixedStyledText('class object_detect.detectors.Ob...')
+              MixedStyledText('class ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:None <desc_annotation>
                    > (0,0,3,0,6) object annotation
                 SingleStyledText('class ')
-              MixedStyledText('light_detect.detectors.', style='additional name part')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:None <desc_addname>
+              MixedStyledText('object_detect.detectors.', style='additional name part')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('light_detect.detectors.')
-              MixedStyledText('ObjectDetector', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:None <desc_name>
+                SingleStyledText('object_detect.detectors.')
+              MixedStyledText('ObjectDetector', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('ObjectDetector')
-              MixedStyledText(' ( image_path=None, image=None )...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:None <desc_parameterlist>
+              MixedStyledText(' ( image_path=None, image=None )...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:None <desc_parameterlist>
                 MixedStyledText(' ( image_path=None, image=None')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -502,30 +502,30 @@
                         SingleStyledText('None')
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Base class for object detectors.')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector:1 <paragraph>
+          Paragraph('Base class for object detectors.')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Base class for object detectors.')
               SingleStyledText('Base class for object detectors.')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property gray_scale_img', id='light_detect.detectors.ObjectDetector.gray_scale_img')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:1 <desc_signature>
+              Paragraph('property gray_scale_img', id='object_detect.detectors.ObjectDetector.gray_scale_img')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property gray_scale_img')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('gray_scale_img', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:None <desc_name>
+                  MixedStyledText('gray_scale_img', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('gray_scale_img')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('np.array((:,:), np.uint8): The g...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.gray_scale_img:1 <paragraph>
+              Paragraph('np.array((:,:), np.uint8): The g...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.gray_scale_img:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('np.array((:,:), np.uint8): The g...')
@@ -534,17 +534,17 @@
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('static show_image ( image, windo...', id='light_detect.detectors.ObjectDetector.show_image')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:1 <desc_signature>
+              Paragraph('static show_image ( image, windo...', id='object_detect.detectors.ObjectDetector.show_image')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('static show_image ( image, windo...')
-                  MixedStyledText('static ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:None <desc_annotation>
+                  MixedStyledText('static ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('static ')
-                  MixedStyledText('show_image', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:None <desc_name>
+                  MixedStyledText('show_image', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('show_image')
-                  MixedStyledText(' ( image, window_title='Image' )...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:None <desc_parameterlist>
+                  MixedStyledText(' ( image, window_title='Image' )...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:None <desc_parameterlist>
                     MixedStyledText(' ( image, window_title='Image'')
                       SingleStyledText(' ( ', style='parentheses')
                            > (0,0,3,0,6) object parentheses
@@ -565,59 +565,59 @@
                             SingleStyledText(''Image'')
                     SingleStyledText(' ) ', style='parentheses')
                          > (0,0,3,0,6) object parentheses
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Display an image.')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:1 <paragraph>
+              Paragraph('Display an image.')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Display an image.')
                   SingleStyledText('Display an image.')
-              DefinitionList()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:None <definition_list>
+              DefinitionList()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:None <definition_list>
                    > (0,0,0,0,2) definition list
-                LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:4 <definition_list_item>
+                LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:4 <definition_list_item>
                      > (0,0,0,0,4) definition list item
                   StaticGroupedFlowables(style='definition term')
                        > (0,0,1,0,5) definition term
                     Paragraph('Args:')
                          > (0,0,1,0,7) definition term paragraph
                            (0,0,0,0,2) body
-                      MixedStyledText('Args:')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:4 <term>
+                      MixedStyledText('Args:')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:4 <term>
                         SingleStyledText('Args:')
                   StaticGroupedFlowables(style='definition')   None:None <definition>
                        > (0,0,1,0,5) definition
-                    Paragraph('image (np.array((:,:,…), np.uint...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:4 <paragraph>
+                    Paragraph('image (np.array((:,:,…), np.uint...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:4 <paragraph>
                          > (0,0,1,0,7) definition paragraph
                            (0,0,0,0,2) body
                       MixedStyledText('image (np.array((:,:,…), np.uint...')
                         SingleStyledText('image (np.array((:,:,…), np.uint...')
-                LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:6 <definition_list_item>
+                LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:6 <definition_list_item>
                      > (0,0,0,0,4) definition list item
                   StaticGroupedFlowables(style='definition term')
                        > (0,0,1,0,5) definition term
                     Paragraph('Keyword Args:')
                          > (0,0,1,0,7) definition term paragraph
                            (0,0,0,0,2) body
-                      MixedStyledText('Keyword Args:')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:6 <term>
+                      MixedStyledText('Keyword Args:')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:6 <term>
                         SingleStyledText('Keyword Args:')
                   StaticGroupedFlowables(style='definition')   None:None <definition>
                        > (0,0,1,0,5) definition
-                    Paragraph('window_title (str): The title to...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_image:7 <paragraph>
+                    Paragraph('window_title (str): The title to...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_image:7 <paragraph>
                          > (0,0,1,0,7) definition paragraph
                            (0,0,0,0,2) body
                       MixedStyledText('window_title (str): The title to...')
                         SingleStyledText('window_title (str): The title to...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('show_working_image (  ) ', id='light_detect.detectors.ObjectDetector.show_working_image')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:1 <desc_signature>
+              Paragraph('show_working_image (  ) ', id='object_detect.detectors.ObjectDetector.show_working_image')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('show_working_image (  ) ')
-                  MixedStyledText('show_working_image', style='main object name')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:None <desc_name>
+                  MixedStyledText('show_working_image', style='main object name')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('show_working_image')
-                  MixedStyledText(' (  ) ')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:None <desc_parameterlist>
+                  MixedStyledText(' (  ) ')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:None <desc_parameterlist>
                     MixedStyledText(' ( ')
                       SingleStyledText(' ( ', style='parentheses')
                            > (0,0,3,0,6) object parentheses
@@ -625,35 +625,35 @@
                            > (0,0,3,0,6) object parameter list
                     SingleStyledText(' ) ', style='parentheses')
                          > (0,0,3,0,6) object parentheses
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Display the current working imag...')   /home/ob1/software/light_detection/src/light_detect/detectors.py:docstring of light_detect.detectors.ObjectDetector.show_working_image:1 <paragraph>
+              Paragraph('Display the current working imag...')   /home/ob1/software/object_detection/src/object_detect/detectors.py:docstring of object_detect.detectors.ObjectDetector.show_working_image:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Display the current working imag...')
                   SingleStyledText('Display the current working imag...')
-      Paragraph('Useful object representation.')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects:1 <paragraph>
+      Paragraph('Useful object representation.')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects:1 <paragraph>
            > (0,0,0,0,2) body
         MixedStyledText('Useful object representation.')
           SingleStyledText('Useful object representation.')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('class light_detect.objects.Circl...', id='light_detect.objects.Circle')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:1 <desc_signature>
+          Paragraph('class object_detect.objects.Circ...', id='object_detect.objects.Circle')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('class light_detect.objects.Circl...')
-              MixedStyledText('class ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:None <desc_annotation>
+            MixedStyledText('class object_detect.objects.Circ...')
+              MixedStyledText('class ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:None <desc_annotation>
                    > (0,0,3,0,6) object annotation
                 SingleStyledText('class ')
-              MixedStyledText('light_detect.objects.', style='additional name part')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:None <desc_addname>
+              MixedStyledText('object_detect.objects.', style='additional name part')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('light_detect.objects.')
-              MixedStyledText('Circle', style='main object name')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:None <desc_name>
+                SingleStyledText('object_detect.objects.')
+              MixedStyledText('Circle', style='main object name')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('Circle')
-              MixedStyledText(' ( center, radius ) ')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:None <desc_parameterlist>
+              MixedStyledText(' ( center, radius ) ')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:None <desc_parameterlist>
                 MixedStyledText(' ( center, radius')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -670,9 +670,9 @@
                         SingleStyledText('radius')
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Represent a circle.')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle:1 <paragraph>
+          Paragraph('Represent a circle.')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Represent a circle.')
@@ -681,17 +681,17 @@
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('classmethod as_integers ( center...', id='light_detect.objects.Circle.as_integers')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:1 <desc_signature>
+              Paragraph('classmethod as_integers ( center...', id='object_detect.objects.Circle.as_integers')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('classmethod as_integers ( center...')
-                  MixedStyledText('classmethod ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:None <desc_annotation>
+                  MixedStyledText('classmethod ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('classmethod ')
-                  MixedStyledText('as_integers', style='main object name')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:None <desc_name>
+                  MixedStyledText('as_integers', style='main object name')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('as_integers')
-                  MixedStyledText(' ( center, radius ) ')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:None <desc_parameterlist>
+                  MixedStyledText(' ( center, radius ) ')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:None <desc_parameterlist>
                     MixedStyledText(' ( center, radius')
                       SingleStyledText(' ( ', style='parentheses')
                            > (0,0,3,0,6) object parentheses
@@ -708,126 +708,126 @@
                             SingleStyledText('radius')
                     SingleStyledText(' ) ', style='parentheses')
                          > (0,0,3,0,6) object parentheses
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('Initialize the circle using roun...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:1 <paragraph>
+              Paragraph('Initialize the circle using roun...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('Initialize the circle using roun...')
                   SingleStyledText('Initialize the circle using roun...')
-              DefinitionList()   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:None <definition_list>
+              DefinitionList()   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:None <definition_list>
                    > (0,0,0,0,2) definition list
-                LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:6 <definition_list_item>
+                LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:6 <definition_list_item>
                      > (0,0,0,0,4) definition list item
                   StaticGroupedFlowables(style='definition term')
                        > (0,0,1,0,5) definition term
                     Paragraph('Args:')
                          > (0,0,1,0,7) definition term paragraph
                            (0,0,0,0,2) body
-                      MixedStyledText('Args:')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:6 <term>
+                      MixedStyledText('Args:')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:6 <term>
                         SingleStyledText('Args:')
                   StaticGroupedFlowables(style='definition')   None:None <definition>
                        > (0,0,1,0,5) definition
                     DefinitionList()   None:None <definition_list>
                          > (0,0,0,0,2) definition list
-                      LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:4 <definition_list_item>
+                      LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:4 <definition_list_item>
                            > (0,0,0,0,4) definition list item
                         StaticGroupedFlowables(style='definition term')
                              > (0,0,1,0,5) definition term
                           Paragraph('center (tuple(float, float)):')
                                > (0,0,1,0,7) definition term paragraph
                                  (0,0,0,0,2) body
-                            MixedStyledText('center (tuple(float, float)):')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:4 <term>
+                            MixedStyledText('center (tuple(float, float)):')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:4 <term>
                               SingleStyledText('center (tuple(float, float)):')
                         StaticGroupedFlowables(style='definition')   None:None <definition>
                              > (0,0,1,0,5) definition
-                          Paragraph('The center position of the circl...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:5 <paragraph>
+                          Paragraph('The center position of the circl...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:5 <paragraph>
                                > (0,0,1,0,7) definition paragraph
                                  (0,0,0,0,2) body
                             MixedStyledText('The center position of the circl...')
                               SingleStyledText('The center position of the circl...')
-                    Paragraph('radius (float): The radius of th...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:6 <paragraph>
+                    Paragraph('radius (float): The radius of th...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:6 <paragraph>
                          > (0,0,1,0,7) definition paragraph
                            (0,0,0,0,2) body
                       MixedStyledText('radius (float): The radius of th...')
                         SingleStyledText('radius (float): The radius of th...')
-                LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:8 <definition_list_item>
+                LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:8 <definition_list_item>
                      > (0,0,0,0,4) definition list item
                   StaticGroupedFlowables(style='definition term')
                        > (0,0,1,0,5) definition term
                     Paragraph('Returns:')
                          > (0,0,1,0,7) definition term paragraph
                            (0,0,0,0,2) body
-                      MixedStyledText('Returns:')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:8 <term>
+                      MixedStyledText('Returns:')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:8 <term>
                         SingleStyledText('Returns:')
                   StaticGroupedFlowables(style='definition')   None:None <definition>
                        > (0,0,1,0,5) definition
-                    Paragraph('instance: The class instance int...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.as_integers:9 <paragraph>
+                    Paragraph('instance: The class instance int...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.as_integers:9 <paragraph>
                          > (0,0,1,0,7) definition paragraph
                            (0,0,0,0,2) body
                       MixedStyledText('instance: The class instance int...')
                         SingleStyledText('instance: The class instance int...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property center', id='light_detect.objects.Circle.center')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:1 <desc_signature>
+              Paragraph('property center', id='object_detect.objects.Circle.center')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property center')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('center', style='main object name')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:None <desc_name>
+                  MixedStyledText('center', style='main object name')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('center')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('tuple: The center position of th...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.center:1 <paragraph>
+              Paragraph('tuple: The center position of th...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.center:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('tuple: The center position of th...')
                   SingleStyledText('tuple: The center position of th...')
-          LabeledFlowable(style='object description')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:None <desc>
+          LabeledFlowable(style='object description')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:None <desc>
                > (0,0,1,0,2) object description
             StaticGroupedFlowables(style='signatures')
                  > (0,0,2,0,3) object signatures
-              Paragraph('property radius', id='light_detect.objects.Circle.radius')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:1 <desc_signature>
+              Paragraph('property radius', id='object_detect.objects.Circle.radius')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:1 <desc_signature>
                    > (0,0,2,0,5) object signature
                      (0,0,0,0,2) body
                 MixedStyledText('property radius')
-                  MixedStyledText('property ', style='annotation')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:None <desc_annotation>
+                  MixedStyledText('property ', style='annotation')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:None <desc_annotation>
                        > (0,0,3,0,6) object annotation
                     SingleStyledText('property ')
-                  MixedStyledText('radius', style='main object name')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:None <desc_name>
+                  MixedStyledText('radius', style='main object name')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:None <desc_name>
                        > (0,0,3,0,6) object name
                     SingleStyledText('radius')
-            StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:None <desc_content>
+            StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:None <desc_content>
                  > (0,0,2,0,3) object description content
-              Paragraph('float or int: The radius of the ...')   /home/ob1/software/light_detection/src/light_detect/objects.py:docstring of light_detect.objects.Circle.radius:1 <paragraph>
+              Paragraph('float or int: The radius of the ...')   /home/ob1/software/object_detection/src/object_detect/objects.py:docstring of object_detect.objects.Circle.radius:1 <paragraph>
                    > (0,0,2,0,5) object description content paragraph
                      (0,0,0,0,2) body
                 MixedStyledText('float or int: The radius of the ...')
                   SingleStyledText('float or int: The radius of the ...')
-      Paragraph('Utility Functions.')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils:1 <paragraph>
+      Paragraph('Utility Functions.')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils:1 <paragraph>
            > (0,0,0,0,2) body
         MixedStyledText('Utility Functions.')
           SingleStyledText('Utility Functions.')
-      LabeledFlowable(style='object description')   /home/ob1/software/light_detection/docs/source/index.rst:0 <desc>
+      LabeledFlowable(style='object description')   /home/ob1/software/object_detection/docs/source/index.rst:0 <desc>
            > (0,0,1,0,2) object description
         StaticGroupedFlowables(style='signatures')
              > (0,0,2,0,3) object signatures
-          Paragraph('light_detect.utils.autoset_prope...', id='light_detect.utils.autoset_property')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:1 <desc_signature>
+          Paragraph('object_detect.utils.autoset_prop...', id='object_detect.utils.autoset_property')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:1 <desc_signature>
                > (0,0,2,0,5) object signature
                  (0,0,0,0,2) body
-            MixedStyledText('light_detect.utils.autoset_prope...')
-              MixedStyledText('light_detect.utils.', style='additional name part')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:None <desc_addname>
+            MixedStyledText('object_detect.utils.autoset_prop...')
+              MixedStyledText('object_detect.utils.', style='additional name part')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:None <desc_addname>
                    > (0,0,3,0,6) additional name part
-                SingleStyledText('light_detect.utils.')
-              MixedStyledText('autoset_property', style='main object name')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:None <desc_name>
+                SingleStyledText('object_detect.utils.')
+              MixedStyledText('autoset_property', style='main object name')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:None <desc_name>
                    > (0,0,3,0,6) object name
                 SingleStyledText('autoset_property')
-              MixedStyledText(' ( property_method ) ')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:None <desc_parameterlist>
+              MixedStyledText(' ( property_method ) ')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:None <desc_parameterlist>
                 MixedStyledText(' ( property_method')
                   SingleStyledText(' ( ', style='parentheses')
                        > (0,0,3,0,6) object parentheses
@@ -839,45 +839,45 @@
                         SingleStyledText('property_method')
                 SingleStyledText(' ) ', style='parentheses')
                      > (0,0,3,0,6) object parentheses
-        StaticGroupedFlowables(style='content')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:None <desc_content>
+        StaticGroupedFlowables(style='content')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:None <desc_content>
              > (0,0,2,0,3) object description content
-          Paragraph('Wraps a class property to automa...')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:1 <paragraph>
+          Paragraph('Wraps a class property to automa...')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:1 <paragraph>
                > (0,0,2,0,5) object description content paragraph
                  (0,0,0,0,2) body
             MixedStyledText('Wraps a class property to automa...')
               SingleStyledText('Wraps a class property to automa...')
           DefinitionList()   None:None <definition_list>
                > (0,0,0,0,2) definition list
-            LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:9 <definition_list_item>
+            LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:9 <definition_list_item>
                  > (0,0,0,0,4) definition list item
               StaticGroupedFlowables(style='definition term')
                    > (0,0,1,0,5) definition term
                 Paragraph('Args:')
                      > (0,0,1,0,7) definition term paragraph
                        (0,0,0,0,2) body
-                  MixedStyledText('Args:')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:9 <term>
+                  MixedStyledText('Args:')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:9 <term>
                     SingleStyledText('Args:')
               StaticGroupedFlowables(style='definition')   None:None <definition>
                    > (0,0,1,0,5) definition
                 DefinitionList()   None:None <definition_list>
                      > (0,0,0,0,2) definition list
-                  LabeledFlowable()   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:9 <definition_list_item>
+                  LabeledFlowable()   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:9 <definition_list_item>
                        > (0,0,0,0,4) definition list item
                     StaticGroupedFlowables(style='definition term')
                          > (0,0,1,0,5) definition term
                       Paragraph('property_method (method):')
                            > (0,0,1,0,7) definition term paragraph
                              (0,0,0,0,2) body
-                        MixedStyledText('property_method (method):')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:9 <term>
+                        MixedStyledText('property_method (method):')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:9 <term>
                           SingleStyledText('property_method (method):')
                     StaticGroupedFlowables(style='definition')   None:None <definition>
                          > (0,0,1,0,5) definition
-                      Paragraph('The class property that is to be...')   /home/ob1/software/light_detection/src/light_detect/utils.py:docstring of light_detect.utils.autoset_property:10 <paragraph>
+                      Paragraph('The class property that is to be...')   /home/ob1/software/object_detection/src/object_detect/utils.py:docstring of object_detect.utils.autoset_property:10 <paragraph>
                            > (0,0,1,0,7) definition paragraph
                              (0,0,0,0,2) body
                         MixedStyledText('The class property that is to be...')
                           SingleStyledText('The class property that is to be...')
-      List(style='bulleted')   /home/ob1/software/light_detection/docs/source/index.rst:43 <bullet_list>
+      List(style='bulleted')   /home/ob1/software/object_detection/docs/source/index.rst:43 <bullet_list>
            > (0,0,1,0,2) bulleted list
         ListItem()
              x (0,0,1,0,4) bulleted list item
@@ -889,9 +889,9 @@
                 SingleStyledText('')
                 SingleStyledText('•')
                 SingleStyledText('')
-          StaticGroupedFlowables()   /home/ob1/software/light_detection/docs/source/index.rst:None <list_item>
+          StaticGroupedFlowables()   /home/ob1/software/object_detection/docs/source/index.rst:None <list_item>
                > (0,0,0,0,3) list item body
-            Paragraph('Index')   /home/ob1/software/light_detection/docs/source/index.rst:43 <paragraph>
+            Paragraph('Index')   /home/ob1/software/object_detection/docs/source/index.rst:43 <paragraph>
                  > (0,0,0,0,5) list item paragraph
                    (0,0,0,0,2) body
               MixedStyledText('Index')
@@ -910,9 +910,9 @@
                 SingleStyledText('')
                 SingleStyledText('•')
                 SingleStyledText('')
-          StaticGroupedFlowables()   /home/ob1/software/light_detection/docs/source/index.rst:None <list_item>
+          StaticGroupedFlowables()   /home/ob1/software/object_detection/docs/source/index.rst:None <list_item>
                > (0,0,0,0,3) list item body
-            Paragraph('Module Index')   /home/ob1/software/light_detection/docs/source/index.rst:44 <paragraph>
+            Paragraph('Module Index')   /home/ob1/software/object_detection/docs/source/index.rst:44 <paragraph>
                  > (0,0,0,0,5) list item paragraph
                    (0,0,0,0,2) body
               MixedStyledText('Module Index')
@@ -958,7 +958,7 @@
 #### ChainedContainer('column1')
   (continued) StaticGroupedFlowables()
     (continued) DocumentTree()
-      (continued) List(style='bulleted')   /home/ob1/software/light_detection/docs/source/index.rst:43 <bullet_list>
+      (continued) List(style='bulleted')   /home/ob1/software/object_detection/docs/source/index.rst:43 <bullet_list>
            > (0,0,1,0,2) bulleted list
         ListItem()
              x (0,0,1,0,4) bulleted list item
@@ -970,9 +970,9 @@
                 SingleStyledText('')
                 SingleStyledText('•')
                 SingleStyledText('')
-          StaticGroupedFlowables()   /home/ob1/software/light_detection/docs/source/index.rst:None <list_item>
+          StaticGroupedFlowables()   /home/ob1/software/object_detection/docs/source/index.rst:None <list_item>
                > (0,0,0,0,3) list item body
-            Paragraph('Search Page')   /home/ob1/software/light_detection/docs/source/index.rst:45 <paragraph>
+            Paragraph('Search Page')   /home/ob1/software/object_detection/docs/source/index.rst:45 <paragraph>
                  > (0,0,0,0,5) list item paragraph
                    (0,0,0,0,2) body
               MixedStyledText('Search Page')
@@ -1025,54 +1025,54 @@
     StaticGroupedFlowables()
       IndexSection()
            > (0,0,0,1,1) chapter
-        IndexLabel('l')
+        IndexLabel('d')
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
-          SingleStyledText('l')
-        IndexEntry('light_detect')
+          SingleStyledText('d')
+        IndexEntry('detect, ??')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          SingleStyledText('light_detect', style='domain')
+          MixedStyledText('detect, ??')
+            SingleStyledText('detect', style='domain')
+                 > (0,0,1,0,3) domain index entry name
+            SingleStyledText(', ')
+            Reference('??')
+                 > (0,0,0,1,1) linked reference
+              SingleStyledText('??')
+        IndexLabel('o')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('o')
+        IndexEntry('object_detect')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          SingleStyledText('object_detect', style='domain')
                > (0,0,1,0,3) domain index entry name
-        IndexEntry('light_detect.detectors, ??')
+        IndexEntry('object_detect.detectors, ??')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-          MixedStyledText('light_detect.detectors, ??')
-            SingleStyledText('light_detect.detectors', style='domain')
+          MixedStyledText('object_detect.detectors, ??')
+            SingleStyledText('object_detect.detectors', style='domain')
                  > (0,0,1,0,3) domain index entry name
             SingleStyledText(', ')
             Reference('??')
                  > (0,0,0,1,1) linked reference
               SingleStyledText('??')
-        IndexEntry('light_detect.objects, ??')
+        IndexEntry('object_detect.objects, ??')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-          MixedStyledText('light_detect.objects, ??')
-            SingleStyledText('light_detect.objects', style='domain')
+          MixedStyledText('object_detect.objects, ??')
+            SingleStyledText('object_detect.objects', style='domain')
                  > (0,0,1,0,3) domain index entry name
             SingleStyledText(', ')
             Reference('??')
                  > (0,0,0,1,1) linked reference
               SingleStyledText('??')
-        IndexEntry('light_detect.utils, ??')
+        IndexEntry('object_detect.utils, ??')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-          MixedStyledText('light_detect.utils, ??')
-            SingleStyledText('light_detect.utils', style='domain')
-                 > (0,0,1,0,3) domain index entry name
-            SingleStyledText(', ')
-            Reference('??')
-                 > (0,0,0,1,1) linked reference
-              SingleStyledText('??')
-        IndexLabel('r')
-             > (0,0,0,0,2) index section label
-               (0,0,0,0,1) body
-          SingleStyledText('r')
-        IndexEntry('run, ??')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('run, ??')
-            SingleStyledText('run', style='domain')
+          MixedStyledText('object_detect.utils, ??')
+            SingleStyledText('object_detect.utils', style='domain')
                  > (0,0,1,0,3) domain index entry name
             SingleStyledText(', ')
             Reference('??')
@@ -1139,20 +1139,20 @@
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
           SingleStyledText('A')
-        IndexEntry('as_integers() (light_detect.obje...')
+        IndexEntry('as_integers() (object_detect.obj...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('as_integers() (light_detect.obje...')
-            SingleStyledText('as_integers() (light_detect.obje...')
+          MixedStyledText('as_integers() (object_detect.obj...')
+            SingleStyledText('as_integers() (object_detect.obj...')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('2')
-        IndexEntry('autoset_property() (in module li...')
+        IndexEntry('autoset_property() (in module ob...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('autoset_property() (in module li...')
-            SingleStyledText('autoset_property() (in module li...')
+          MixedStyledText('autoset_property() (in module ob...')
+            SingleStyledText('autoset_property() (in module ob...')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
@@ -1161,81 +1161,32 @@
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
           SingleStyledText('C')
-        IndexEntry('center() (light_detect.objects.C...')
+        IndexEntry('center() (object_detect.objects....')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('center() (light_detect.objects.C...')
-            SingleStyledText('center() (light_detect.objects.C...')
+          MixedStyledText('center() (object_detect.objects....')
+            SingleStyledText('center() (object_detect.objects....')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('2')
-        IndexEntry('Circle (class in light_detect.ob...')
+        IndexEntry('Circle (class in object_detect.o...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('Circle (class in light_detect.ob...')
-            SingleStyledText('Circle (class in light_detect.ob...')
+          MixedStyledText('Circle (class in object_detect.o...')
+            SingleStyledText('Circle (class in object_detect.o...')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('2')
-        IndexLabel('G')
+        IndexLabel('D')
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
-          SingleStyledText('G')
-        IndexEntry('gaussian_blur_length() (light_de...')
+          SingleStyledText('D')
+        IndexEntry('detect')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('gaussian_blur_length() (light_de...')
-            SingleStyledText('gaussian_blur_length() (light_de...')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
-        IndexEntry('gray_scale_img() (light_detect.d...')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('gray_scale_img() (light_detect.d...')
-            SingleStyledText('gray_scale_img() (light_detect.d...')
-            MixedStyledText('2')
-              Reference('2')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('2')
-        IndexLabel('L')
-             > (0,0,0,0,2) index section label
-               (0,0,0,0,1) body
-          SingleStyledText('L')
-        IndexEntry('light_centers() (light_detect.de...')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('light_centers() (light_detect.de...')
-            SingleStyledText('light_centers() (light_detect.de...')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
-        IndexEntry('light_circles() (light_detect.de...')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('light_circles() (light_detect.de...')
-            SingleStyledText('light_circles() (light_detect.de...')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
-        IndexEntry('light_contours() (light_detect.d...')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('light_contours() (light_detect.d...')
-            SingleStyledText('light_contours() (light_detect.d...')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
-        IndexEntry('light_detect.detectors')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          SingleStyledText('light_detect.detectors')
+          SingleStyledText('detect')
         IndexEntry('module, 1')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
@@ -1245,37 +1196,64 @@
               Reference('1')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('1')
-        IndexEntry('light_detect.objects')
+        IndexLabel('G')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('G')
+        IndexEntry('gaussian_blur_length() (object_d...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          SingleStyledText('light_detect.objects')
-        IndexEntry('module, 2')
-             > (0,0,0,1,2) level 2 index entry
+          MixedStyledText('gaussian_blur_length() (object_d...')
+            SingleStyledText('gaussian_blur_length() (object_d...')
+            MixedStyledText('1')
+              Reference('1')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('1')
+        IndexEntry('gray_scale_img() (object_detect....')
+             > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('module, 2')
-            SingleStyledText('module, ')
+          MixedStyledText('gray_scale_img() (object_detect....')
+            SingleStyledText('gray_scale_img() (object_detect....')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('2')
-        IndexEntry('light_detect.utils')
+        IndexLabel('L')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('L')
+        IndexEntry('light_centers() (object_detect.d...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          SingleStyledText('light_detect.utils')
-        IndexEntry('module, 2')
-             > (0,0,0,1,2) level 2 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('module, 2')
-            SingleStyledText('module, ')
-            MixedStyledText('2')
-              Reference('2')
+          MixedStyledText('light_centers() (object_detect.d...')
+            SingleStyledText('light_centers() (object_detect.d...')
+            MixedStyledText('1')
+              Reference('1')
                    > (0,0,0,1,1) linked reference
-                SingleStyledText('2')
-        IndexEntry('LightDetector (class in light_de...')
+                SingleStyledText('1')
+        IndexEntry('light_circles() (object_detect.d...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('LightDetector (class in light_de...')
-            SingleStyledText('LightDetector (class in light_de...')
+          MixedStyledText('light_circles() (object_detect.d...')
+            SingleStyledText('light_circles() (object_detect.d...')
+            MixedStyledText('1')
+              Reference('1')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('1')
+        IndexEntry('light_contours() (object_detect....')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('light_contours() (object_detect....')
+            SingleStyledText('light_contours() (object_detect....')
+            MixedStyledText('1')
+              Reference('1')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('1')
+        IndexEntry('LightDetector (class in object_d...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('LightDetector (class in object_d...')
+            SingleStyledText('LightDetector (class in object_d...')
             MixedStyledText('1')
               Reference('1')
                    > (0,0,0,1,1) linked reference
@@ -1284,11 +1262,11 @@
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
           SingleStyledText('M')
-        IndexEntry('main() (in module run), 1')
+        IndexEntry('main() (in module detect), 1')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('main() (in module run), 1')
-            SingleStyledText('main() (in module run), ')
+          MixedStyledText('main() (in module detect), 1')
+            SingleStyledText('main() (in module detect), ')
             MixedStyledText('1')
               Reference('1')
                    > (0,0,0,1,1) linked reference
@@ -1297,20 +1275,29 @@
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
           SingleStyledText('module')
-        IndexEntry('light_detect.detectors, 1')
+        IndexEntry('detect, 1')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-          MixedStyledText('light_detect.detectors, 1')
-            SingleStyledText('light_detect.detectors, ')
+          MixedStyledText('detect, 1')
+            SingleStyledText('detect, ')
             MixedStyledText('1')
               Reference('1')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('1')
-        IndexEntry('light_detect.objects, 2')
+        IndexEntry('object_detect.detectors, 1')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-          MixedStyledText('light_detect.objects, 2')
-            SingleStyledText('light_detect.objects, ')
+          MixedStyledText('object_detect.detectors, 1')
+            SingleStyledText('object_detect.detectors, ')
+            MixedStyledText('1')
+              Reference('1')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('1')
+        IndexEntry('object_detect.objects, 2')
+             > (0,0,0,1,2) level 2 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('object_detect.objects, 2')
+            SingleStyledText('object_detect.objects, ')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
@@ -1321,61 +1308,17 @@
          > (0,0,0,1,1) chapter
       (continued) Index()   index
            > (0,0,0,0,2) index
-        IndexEntry('light_detect.utils, 2')
+        IndexEntry('object_detect.utils, 2')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
-        IndexEntry('run, 1')
-             > (0,0,0,1,2) level 2 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('run, 1')
-            SingleStyledText('run, ')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
         IndexLabel('O')
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
           SingleStyledText('O')
-        IndexEntry('ObjectDetector (class in light_d...')
+        IndexEntry('object_detect.detectors')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('ObjectDetector (class in light_d...')
-            SingleStyledText('ObjectDetector (class in light_d...')
-            MixedStyledText('2')
-              Reference('2')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('2')
-        IndexLabel('P')
-             > (0,0,0,0,2) index section label
-               (0,0,0,0,1) body
-          SingleStyledText('P')
-        IndexEntry('parse_args() (in module run), 1')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('parse_args() (in module run), 1')
-            SingleStyledText('parse_args() (in module run), ')
-            MixedStyledText('1')
-              Reference('1')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('1')
-        IndexLabel('R')
-             > (0,0,0,0,2) index section label
-               (0,0,0,0,1) body
-          SingleStyledText('R')
-        IndexEntry('radius() (light_detect.objects.C...')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          MixedStyledText('radius() (light_detect.objects.C...')
-            SingleStyledText('radius() (light_detect.objects.C...')
-            MixedStyledText('2')
-              Reference('2')
-                   > (0,0,0,1,1) linked reference
-                SingleStyledText('2')
-        IndexEntry('run')
-             > (0,0,0,1,2) level 1 index entry
-               (0,0,0,0,1) body
-          SingleStyledText('run')
+          SingleStyledText('object_detect.detectors')
         IndexEntry('module, 1')
              > (0,0,0,1,2) level 2 index entry
                (0,0,0,0,1) body
@@ -1385,33 +1328,94 @@
               Reference('1')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('1')
-        IndexLabel('S')
-             > (0,0,0,0,2) index section label
-               (0,0,0,0,1) body
-          SingleStyledText('S')
-        IndexEntry('show_image() (light_detect.detec...')
+        IndexEntry('object_detect.objects')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('show_image() (light_detect.detec...')
-            SingleStyledText('show_image() (light_detect.detec...')
+          SingleStyledText('object_detect.objects')
+        IndexEntry('module, 2')
+             > (0,0,0,1,2) level 2 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('module, 2')
+            SingleStyledText('module, ')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('2')
-        IndexEntry('show_lights() (light_detect.dete...')
+        IndexEntry('object_detect.utils')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('show_lights() (light_detect.dete...')
-            SingleStyledText('show_lights() (light_detect.dete...')
+          SingleStyledText('object_detect.utils')
+        IndexEntry('module, 2')
+             > (0,0,0,1,2) level 2 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('module, 2')
+            SingleStyledText('module, ')
+            MixedStyledText('2')
+              Reference('2')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('2')
+        IndexEntry('ObjectDetector (class in object_...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('ObjectDetector (class in object_...')
+            SingleStyledText('ObjectDetector (class in object_...')
+            MixedStyledText('2')
+              Reference('2')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('2')
+        IndexLabel('P')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('P')
+        IndexEntry('parse_args() (in module detect),...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('parse_args() (in module detect),...')
+            SingleStyledText('parse_args() (in module detect),...')
             MixedStyledText('1')
               Reference('1')
                    > (0,0,0,1,1) linked reference
                 SingleStyledText('1')
-        IndexEntry('show_working_image() (light_dete...')
+        IndexLabel('R')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('R')
+        IndexEntry('radius() (object_detect.objects....')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('show_working_image() (light_dete...')
-            SingleStyledText('show_working_image() (light_dete...')
+          MixedStyledText('radius() (object_detect.objects....')
+            SingleStyledText('radius() (object_detect.objects....')
+            MixedStyledText('2')
+              Reference('2')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('2')
+        IndexLabel('S')
+             > (0,0,0,0,2) index section label
+               (0,0,0,0,1) body
+          SingleStyledText('S')
+        IndexEntry('show_image() (object_detect.dete...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('show_image() (object_detect.dete...')
+            SingleStyledText('show_image() (object_detect.dete...')
+            MixedStyledText('2')
+              Reference('2')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('2')
+        IndexEntry('show_lights() (object_detect.det...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('show_lights() (object_detect.det...')
+            SingleStyledText('show_lights() (object_detect.det...')
+            MixedStyledText('1')
+              Reference('1')
+                   > (0,0,0,1,1) linked reference
+                SingleStyledText('1')
+        IndexEntry('show_working_image() (object_det...')
+             > (0,0,0,1,2) level 1 index entry
+               (0,0,0,0,1) body
+          MixedStyledText('show_working_image() (object_det...')
+            SingleStyledText('show_working_image() (object_det...')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference
@@ -1420,11 +1424,11 @@
              > (0,0,0,0,2) index section label
                (0,0,0,0,1) body
           SingleStyledText('T')
-        IndexEntry('threshold() (light_detect.detect...')
+        IndexEntry('threshold() (object_detect.detec...')
              > (0,0,0,1,2) level 1 index entry
                (0,0,0,0,1) body
-          MixedStyledText('threshold() (light_detect.detect...')
-            SingleStyledText('threshold() (light_detect.detect...')
+          MixedStyledText('threshold() (object_detect.detec...')
+            SingleStyledText('threshold() (object_detect.detec...')
             MixedStyledText('2')
               Reference('2')
                    > (0,0,0,1,1) linked reference

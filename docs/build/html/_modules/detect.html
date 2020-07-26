@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>run &#8212; light_detect 1.0.0 documentation</title>
+    <title>detect &#8212; object_detect 1.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -31,17 +31,17 @@
 
           <div class="body" role="main">
             
-  <h1>Source code for run</h1><div class="highlight"><pre>
-<span></span><span class="ch">#!/usr/bin/env python</span>
+  <h1>Source code for detect</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
 <span class="sd">&quot;&quot;&quot;Command line tool to find lights in an image&quot;&quot;&quot;</span>
 <span class="c1"># Standard Imports</span>
 <span class="kn">import</span> <span class="nn">argparse</span>
 
 <span class="c1"># Local Imports</span>
-<span class="kn">from</span> <span class="nn">light_detect.detectors</span> <span class="kn">import</span> <span class="n">LightDetector</span>
+<span class="kn">from</span> <span class="nn">object_detect.detectors</span> <span class="kn">import</span> <span class="n">LightDetector</span>
 
 
-<div class="viewcode-block" id="parse_args"><a class="viewcode-back" href="../index.html#run.parse_args">[docs]</a><span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+<div class="viewcode-block" id="parse_args"><a class="viewcode-back" href="../index.html#detect.parse_args">[docs]</a><span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Parse the arguments.</span>
 
 <span class="sd">    Returns:</span>
@@ -91,7 +91,7 @@
     <span class="k">return</span> <span class="n">args</span></div>
 
 
-<div class="viewcode-block" id="main"><a class="viewcode-back" href="../index.html#run.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../index.html#detect.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Detect the lights in an image.&quot;&quot;&quot;</span>
     <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
 
@@ -122,7 +122,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">light_detect</a></h1>
+<h1 class="logo"><a href="../index.html">object_detect</a></h1>
 
 
 
