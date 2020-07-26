@@ -1,6 +1,6 @@
-# light_detection
+# object_detection
 
-Command line tool and API that allows detection of lights in an image.
+Command line tool and API that allows detection of objects in an image. Currently the base object detection class is only implemented to detect the location of lights in an image as an example.
 
 # Purpose
 
@@ -16,7 +16,7 @@ To enter the virtual environment run:
 
 # Run
 
-The command line executable is at `./src/run.py`, use the `-h` or `--help` switch to view the available options.
+The command line executable is at `./src/detect.py`, use the `-h` or `--help` switch to view the available options.
 
 # Documentation
 
